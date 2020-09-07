@@ -5,6 +5,7 @@ public class Condicionales {
 
     public static void main(String[] args) {
         
+        ejercicioPropuesto8();
      
     }
     
@@ -348,16 +349,7 @@ public class Condicionales {
     }
     
     public static void ejercicio6(){
-        /*
-        6) El IMSS requiere clasificar a las personas que se jubilaran en el año de 1997. Existen
-tres tipos de jubilaciones: por edad, por antigüedad joven y por antigüedad adulta. Las
-personas adscritas a la jubilación por edad deben tener 60 años o mas y una antigüedad en
-su empleo de menos de 25 años. Las personas adscritas a la jubilación por antigüedad
-joven deben tener menos de 60 años y una antigüedad en su empleo de 25 años o mas.
-Las personas adscritas a la jubilación por antigüedad adulta deben tener 60 años o
-mas y una antigüedad en su empleo de 25 años o mas.
-Determinar en que tipo de jubilación, quedara adscrita una persona.
-        */
+
         Scanner teclado = new Scanner(System.in);
         int edadJubilacion, antiguedad;
         
@@ -510,10 +502,7 @@ Determinar en que tipo de jubilación, quedara adscrita una persona.
         
         precioInicial *= 1.19;
         
-        System.out.println("su total a pagar con iva incluido es "+precioInicial);
-        
-        
-        
+        System.out.println("su total a pagar con iva incluido es "+precioInicial);     
     }
     
     public static void ejercicioPropuesto5(){
@@ -540,9 +529,7 @@ Determinar en que tipo de jubilación, quedara adscrita una persona.
             precioFinal = kilosComprados * precioManzanas * 0.8;
         }
  
-        System.out.println("su total a pagar es " + precioFinal);
-        
-        
+        System.out.println("su total a pagar es " + precioFinal);   
     }
     
     public static void ejercicioPropuesto6(){
