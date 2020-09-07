@@ -5,30 +5,7 @@ public class Condicionales {
 
     public static void main(String[] args) {
         
-        //CONDICIONALES SIMPLES
-        //determinarPositivoNegativo();
-        //determinarParImpar();
-        //determinarMultiplo();
-        //conocerIntereses();
-        //aprobarCurso();
-        //determinarDescuento();
-        //calcularSalarioSemanal();
-        //calcularCalorias();
-        //imprimirAscendente();
-        
-        //CLASE CONDICIONALES COMPUESTOS
-        //operarNumeros();
-        //determinarMayor();
-        //calcularDineroExtra();
-        //calcularUtilidades();
-        //elegirBolita();
-        //determinarTipoJubilacion();
-        ofrecerDescuentoComputadoras();
-
-        
-        
-        
-        
+     
     }
     
     public static void determinarPositivoNegativo(){
@@ -84,7 +61,6 @@ public class Condicionales {
             System.out.println(n+ " no es multiplo de "+multiplo);
         }
     }
-    
     
     public static void conocerIntereses(){
         Scanner teclado = new Scanner(System.in);
@@ -214,7 +190,7 @@ public class Condicionales {
     }
     
     //CLASE CONDICIONALES ANIDADOS
-    public static void operarNumeros(){
+    public static void ejercicio1(){
 
         Scanner teclado = new Scanner(System.in);
         int numero1, numero2, resultado;
@@ -241,7 +217,7 @@ public class Condicionales {
         }
     }
     
-    public static void determinarMayor(){
+    public static void ejercicio2(){
         Scanner teclado = new Scanner(System.in);
         int numero1,numero2,numero3,mayor;
         
@@ -268,7 +244,7 @@ public class Condicionales {
         
     }
     
-    public static void calcularDineroExtra(){
+    public static void ejercicio3(){
         Scanner teclado = new Scanner(System.in);
         int horasTrabajadas, horasExtra;
         double pagoHora, pagoTotalExtra;
@@ -295,7 +271,7 @@ public class Condicionales {
         }
     }
     
-    public static void calcularUtilidades(){
+    public static void ejercicio4(){
 
         Scanner teclado = new Scanner(System.in);
         double salarioMensual, utilidad;
@@ -333,7 +309,7 @@ public class Condicionales {
         System.out.println("debido a que usted tiene "+antiguedad+ " años de antiguedad");
     }
     
-    public static void elegirBolita(){
+    public static void ejercicio5(){
 
         Scanner teclado = new Scanner(System.in);
         String colorBolita;
@@ -371,7 +347,7 @@ public class Condicionales {
         System.out.println("debido a que sacó una bola de color "+colorBolita);
     }
     
-    public static void determinarTipoJubilacion(){
+    public static void ejercicio6(){
         /*
         6) El IMSS requiere clasificar a las personas que se jubilaran en el año de 1997. Existen
 tres tipos de jubilaciones: por edad, por antigüedad joven y por antigüedad adulta. Las
@@ -409,7 +385,7 @@ Determinar en que tipo de jubilación, quedara adscrita una persona.
         }
     }
     
-    public static void ofrecerDescuentoComputadoras(){
+    public static void ejercicioPropuesto1(){
         Scanner teclado = new Scanner(System.in);
         int numeroComputadoras,descuento;
         double precioComputadora, totalPagar;
@@ -453,4 +429,308 @@ Determinar en que tipo de jubilación, quedara adscrita una persona.
         
     }
     
+    public static void ejercicioPropuesto2(){
+        Scanner teclado = new Scanner(System.in);
+        
+        int cantidadLlantas, precioLlanta;
+        double totalPagar;
+        
+        System.out.println("ingrese la cantidad de llantas a llevar:");
+        cantidadLlantas = teclado.nextInt();
+        
+        if(cantidadLlantas < 5){
+            precioLlanta = 300;
+        }
+        else if(cantidadLlantas >=5 && cantidadLlantas <= 10){
+            precioLlanta = 250;
+        }
+        else{
+            precioLlanta = 200;
+        }
+        
+        totalPagar = precioLlanta * cantidadLlantas;
+        System.out.println("el precio de cada llanta es de "+precioLlanta);
+        System.out.println("usted llevó "+cantidadLlantas);
+        System.out.println("deberá pagar en total "+ totalPagar);
+    }
+    
+    public static void ejercicioPropuesto3(){
+        Scanner teclado = new Scanner(System.in);
+
+        String opcionUsuario;
+        System.out.println("Responda 'si o 'no' según sea el caso");
+        System.out.println("1. Colon descubrió América?");
+        opcionUsuario = teclado.next();
+        
+        if(opcionUsuario.equals("si")){
+            System.out.println();
+            System.out.println("correcto, siguiente pregunta:");
+            System.out.println("2. La independencia de México fue en el año 1810?");
+            opcionUsuario = teclado.next();
+            
+            if(opcionUsuario.equals("si")){
+                System.out.println();
+                System.out.println("segunda pregunta correcta, siguiente pregunta:");
+                System.out.println("3. The Doors fue un grupo de rock Americano?");
+                opcionUsuario = teclado.next();
+                
+                if(opcionUsuario.equals("si")){
+                    System.out.println("correcto, ha finalizado el juego con satisfación");
+                }
+                else{
+                    System.out.println("ha fallado, el juego finalizó");
+                }
+            }
+            else{
+                System.out.println("fallaste, fin del programa");
+            }
+            
+        }
+        else{
+            System.out.println("fallaste, fin del programa");
+        }
+    }
+    
+    public static void ejercicioPropuesto4(){
+        Scanner teclado = new Scanner(System.in);
+        double precioInicial;
+        String marca;
+        
+        System.out.println("ingrese el precio del aparato:");
+        precioInicial = teclado.nextDouble();
+        System.out.println("ingrese la marca del aparato:");
+        marca = teclado.next();
+        
+        if(precioInicial > 2000){
+            precioInicial *= 0.9;
+            if(marca.equals("NOSY")){
+                precioInicial *= 0.95;
+            }
+        }
+        
+        precioInicial *= 1.19;
+        
+        System.out.println("su total a pagar con iva incluido es "+precioInicial);
+        
+        
+        
+    }
+    
+    public static void ejercicioPropuesto5(){
+        Scanner teclado = new Scanner(System.in);
+        double kilosComprados, precioManzanas, precioFinal;
+        
+        precioFinal = 0;
+        System.out.println("ingrese la cantidad de kilos a comprar:");
+        kilosComprados = teclado.nextDouble();
+        
+        System.out.println("ingrese el precio de las manzanas:");
+        precioManzanas = teclado.nextDouble();
+        
+        if(kilosComprados >= 0 && kilosComprados <= 2){
+            precioFinal = kilosComprados * precioManzanas;
+        }
+        else if(kilosComprados >= 2.01 && kilosComprados <= 5){
+            precioFinal = kilosComprados * precioManzanas * 0.9;
+        }
+        else if(kilosComprados >= 5.01 && kilosComprados <= 10){
+            precioFinal = kilosComprados * precioManzanas * 0.85;
+        }
+        else if(kilosComprados > 10){
+            precioFinal = kilosComprados * precioManzanas * 0.8;
+        }
+ 
+        System.out.println("su total a pagar es " + precioFinal);
+        
+        
+    }
+    
+    public static void ejercicioPropuesto6(){
+        Scanner teclado = new Scanner(System.in);
+        
+        double capital, porcentajeComputo, porcentajeMoviliario, porcentajePersonal;
+        double prestamo;
+        
+        System.out.println("ingrese su capital actual");
+        capital = teclado.nextDouble();
+        
+        if(capital < 0){
+            prestamo = (capital*-1)+ 10000;
+            capital = 10000;
+        }
+        else if(capital > 0  && capital <= 20000){
+            prestamo = 20000 - capital;
+            capital = 20000;
+        }
+        else{
+            prestamo = 0;
+        }
+        
+        porcentajeComputo = (5000 / capital) * 100;
+        porcentajeMoviliario = (2000 / capital) * 100;
+        porcentajePersonal = ((capital - 7000) / capital) * 100;
+        
+        if(prestamo == 0){
+            System.out.println("no tuvo que realizar ningún prestamo");
+        }
+        else{
+            System.out.println("tuvo que realizar prestamo por " + prestamo);
+        }
+        System.out.println("su capital actual es " + capital);
+        System.out.println("el porcentaje del capital destinado a Computo es " + porcentajeComputo + " %");
+        System.out.println("el porcentaje del capital destinado a Moviliario es " + porcentajeMoviliario+ " %");
+        System.out.println("el porcentaje del capital para insumos y empleados es " + porcentajePersonal+ " %");
+        
+    }
+    
+    public static void ejercicioPropuesto7(){
+        Scanner teclado = new Scanner(System.in);
+        
+        int edad, sexo, auxiliarEdad;
+        double nivelHemoglobina;
+        
+        System.out.print("ingrese su edad en años:");
+        edad = teclado.nextInt();
+        
+        System.out.print("ingrese '1' para hombre y '2' para mujer: ");
+        sexo = teclado.nextInt();
+        
+        System.out.print("ingrese su nivel de hemoglobina: ");
+        nivelHemoglobina = teclado.nextDouble();
+        
+        if(edad >=0 && edad <=1){
+            
+            System.out.print("sea expecífico con su edad en meses por favor: ");
+            auxiliarEdad = teclado.nextInt();
+            
+            if(auxiliarEdad >= 0 && auxiliarEdad <= 1){
+                
+                if(nivelHemoglobina >= 13 && nivelHemoglobina <= 26){
+                System.out.println("examen con resultado NEGATIVO");
+                }
+                else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+                }  
+            }
+            else if(auxiliarEdad > 1 && auxiliarEdad <=6){
+                
+                if(nivelHemoglobina >= 10 && nivelHemoglobina <= 18){
+                System.out.println("examen con resultado NEGATIVO");
+                }
+                else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+                } 
+            }
+            else if(auxiliarEdad > 6 && auxiliarEdad <=12){
+                
+                if(nivelHemoglobina >= 11 && nivelHemoglobina <= 15){
+                System.out.println("examen con resultado NEGATIVO");
+                }
+                else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+                } 
+            }
+            else{
+                System.out.println("error en los datos suministrados");
+            }
+  
+        }
+        else if(edad > 1 && edad <=5){
+            
+            if(nivelHemoglobina >= 11.5 && nivelHemoglobina <= 15){
+                System.out.println("examen con resultado NEGATIVO");
+            }
+            else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+            } 
+        }
+        else if(edad > 5 && edad <= 10){
+            
+            if(nivelHemoglobina >= 12.6 && nivelHemoglobina <= 15.5){
+                System.out.println("examen con resultado NEGATIVO");
+            }
+            else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+            } 
+        }
+        else if(edad > 10 && edad <= 15){
+            
+            if(nivelHemoglobina >= 13 && nivelHemoglobina <= 15.5){
+                System.out.println("examen con resultado NEGATIVO");
+            }
+            else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+            } 
+        }
+        else if(sexo == 1 && edad > 15){
+            
+            if(nivelHemoglobina >= 12 && nivelHemoglobina <= 16){
+                System.out.println("examen con resultado NEGATIVO");
+            }
+            else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+            } 
+        }
+        else if(sexo == 2 && edad > 15){
+            
+            if(nivelHemoglobina >= 14 && nivelHemoglobina <= 18){
+                System.out.println("examen con resultado NEGATIVO");
+            }
+            else{
+                System.out.println("lo sentimos, su resultado ha dado POSITIVO");
+            } 
+        }
+    }
+    
+    public static void ejercicioPropuesto8(){
+        Scanner teclado = new Scanner(System.in);
+        
+        double promedio, totalPagar;
+        int nivelAcademico, materiasReprobadas;
+        
+        
+        System.out.print("ingrese '1' para 'preparatoria' y '2' para 'profesional':");
+        nivelAcademico = teclado.nextInt();
+        
+        System.out.print("ingrese su promedio:");
+        promedio = teclado.nextDouble();
+              
+        if(promedio >= 9.5 && nivelAcademico == 1 & promedio <= 10){
+            totalPagar = 55 * 180;
+            totalPagar *= 0.75;
+        }
+        else if(promedio >= 9 && promedio < 9.5 && nivelAcademico == 1){
+            totalPagar = 50 * 180;
+            totalPagar *= 0.9;
+        }
+        else if(promedio > 7 & promedio < 9 & nivelAcademico == 1){
+            totalPagar = 50 * 180;
+        }
+        else if(promedio <=7 & nivelAcademico == 1){
+            System.out.print("ingrese la cantidad de materias reprobadas:");
+            materiasReprobadas = teclado.nextInt();
+            
+            if(materiasReprobadas >=0 & materiasReprobadas <=3){
+                totalPagar = 45 * 180;
+            }
+            else if(materiasReprobadas >=4){
+                totalPagar = 40 * 180;
+            }else{
+                totalPagar = 0;
+            }
+        }
+        else if(promedio >= 9.5 & nivelAcademico == 2 & promedio <= 10){
+            totalPagar = 55 * 300;
+            totalPagar *= 0.8;
+        }
+        else if(promedio < 9.5 & nivelAcademico == 2){
+            totalPagar = 55 * 300;
+        }
+        else{
+            totalPagar = 0;
+        }
+        
+        System.out.println("su total a pagar es de "+totalPagar);
+    }
+
 }
