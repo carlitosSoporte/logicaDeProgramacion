@@ -82,7 +82,7 @@ public class ArraysEJERCICIOS {
         
         System.out.println("LOS NUMEROS GENERADOS SON:");
         for(int i=0;i<numeros.length;i++){
-            numeros[i]=(int)(Math.random()*5+1);
+            numeros[i]=(int)(Math.random()*50+1);
             System.out.print(numeros[i]+"   ");
         }
         
@@ -134,24 +134,22 @@ public class ArraysEJERCICIOS {
     
     
     static void ejercicioArreglos7(){
-        int [] A = new int[5];
-        int [] B = new int[5];
+        int [] A = new int[6];
+        int [] B = new int[6];
         int [] C = new int[A.length+B.length];
         
         System.out.print("A[]= ");
         for(int i=0;i < A.length;i++){
             A[i] = (int)(Math.random()*100+1);
             System.out.print(A[i]+"  ");
-        }
-        
+        }       
         System.out.print("\n\nB[]= ");
         for(int i=0;i < B.length;i++){
             
             B[i] = (int)(Math.random()*100+1);
             System.out.print(B[i]+"  ");
             
-        }
-        
+        }      
         System.out.print("\n\nC[]= ");
         int ayuda=0;
         for(int i=0;i < A.length;i++){
@@ -160,5 +158,49 @@ public class ArraysEJERCICIOS {
             System.out.print(C[ayuda]+"  "+C[ayuda+1]+"  "); 
         }
         System.out.println();  
+    }
+    
+    static void ejercicioArreglos8(){
+         
+        double sumaTotal;
+        int cantidadNumeros;
+        
+        sumaTotal=0;
+        cantidadNumeros = Integer.parseInt(JOptionPane.showInputDialog("ingrese la cantidad de números"));
+        double []numeros = new double[cantidadNumeros];
+        
+        for(int i=0; i<numeros.length;i++){
+            numeros[i]=Double.parseDouble(JOptionPane.showInputDialog("ingrese el valor de la posición "+i+":"));
+            sumaTotal+=numeros[i];
+        }
+        
+        for(int i=0; i<numeros.length;i++){
+            if(i< numeros.length-1){
+                System.out.print(numeros[i]+" + ");
+            }
+            else{
+                System.out.print(numeros[i]+" = ");
+            }
+            
+        } 
+        System.out.println(sumaTotal);
+        
+        
+    }
+    
+    static void ejercicioArreglos9(){
+        int cantidadPalabras;
+        cantidadPalabras = Integer.parseInt(JOptionPane.showInputDialog("ingrese la cantidad de palabras:"));
+        String [] palabras = new String[cantidadPalabras];
+        
+        for(int i=0;i<palabras.length;i++){
+            palabras[i]=JOptionPane.showInputDialog("ingrese la palabra "+(i+1)+":");
+        }
+        
+        System.out.print("palabras[]{ ");
+        for(int i=0;i<palabras.length;i++){
+            System.out.print(palabras[i]+" ");
+        }
+        System.out.println(" }");
     }
 }
