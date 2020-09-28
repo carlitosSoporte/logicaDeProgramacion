@@ -1,12 +1,14 @@
 
 package arraysejercicios;
 
+import java.text.DecimalFormat;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class ArraysEJERCICIOS {
 
     public static void main(String[] args) {
-        ejercicioArreglos7();
+        ejercicioPropuesto5();
     }
     
     
@@ -202,5 +204,145 @@ public class ArraysEJERCICIOS {
             System.out.print(palabras[i]+" ");
         }
         System.out.println(" }");
+    }
+    
+    
+    //ejercicios con nota
+    static void ejercicioPropuesto1(){
+        DecimalFormat formato = new DecimalFormat("#.#");
+        Random aleatorio = new Random();
+        double [] numeros= new double[5];
+        double sumatoriaNumeros, promedio;
+        
+        int cantidadMayoresPromedio = 0;
+        sumatoriaNumeros = 0;
+        promedio = 0;
+        
+        System.out.println("NUMEROS GENERADOS ALEATORIAMENTE:");
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i]= 0+(5-0)*aleatorio.nextDouble();
+            System.out.print(formato.format(numeros[i])+"  ");
+            sumatoriaNumeros += numeros[i];
+        }
+        
+        promedio = sumatoriaNumeros / numeros.length;
+        
+        System.out.println("\n\nEl promedio de los números fue "+formato.format(promedio));
+        
+        System.out.println("\nLos números mayores que el promedio son:");
+        for (int i = 0; i < numeros.length; i++) {  
+            if (numeros[i] > promedio) {
+                System.out.print(formato.format(numeros[i])+"  ");
+                cantidadMayoresPromedio++;
+            }      
+        }
+        System.out.println("\n\nLa cantidad de números mayores que el promedio fue "+cantidadMayoresPromedio);
+    }
+    
+    static void ejercicioPropuesto2(){
+        Random aleatorio = new Random();
+        DecimalFormat formato = new DecimalFormat("#.###");
+        double [] A = new double[5];
+        double [] B = new double[A.length];
+        double [] C = new double[A.length];
+        
+        System.out.print("Sumando 1[] {  ");
+        for (int i = 0; i < A.length; i++) {
+            A[i]=4+(5-4)*aleatorio.nextDouble();
+            System.out.print(formato.format(A[i])+"  ");
+        }
+        System.out.print("}");
+        
+        System.out.print("\nSumando 2[] {  ");
+        for (int i = 0; i < A.length; i++) {
+            B[i]=0+(5-0)*aleatorio.nextDouble();
+            System.out.print(formato.format(B[i])+"  ");
+            C[i]=A[i]+B[i];
+        }
+        System.out.print("}");
+        
+        System.out.print("\nResultado Final[] {  ");
+        for (int i = 0; i < A.length; i++) {
+            C[i]=A[i]+B[i];
+            System.out.print(formato.format(C[i])+"  ");
+            C[i]=A[i]+B[i];
+        }
+        System.out.print("}");
+    }
+    
+    static void ejercicioPropuesto3(){
+        int [] numeros = new int[5];
+        int posicion, numeroMayor;
+        
+        posicion = 0;
+        numeroMayor = 0;
+        
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = (int) (Math.random()*50+1);
+            System.out.println(+numeros[i]+" está en la posición "+i);
+            if(numeros[i] > numeroMayor){
+                numeroMayor = numeros[i];
+                posicion=i;
+            }
+        }
+        
+        System.out.println("\nEl número mayor es "+numeroMayor+" y su posición es "+posicion);
+    }
+    
+    static void ejercicioPropuesto4(){
+        int [] numeros = new int[5];
+        int [] cuadrados = new int[numeros.length];
+        
+        System.out.print("NUMEROS[] {  ");
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = (int) (Math.random()*50+1);
+            System.out.print(numeros[i]+"  ");
+        }
+        System.out.print("}");
+        
+        System.out.print("\nCUADRADOS[] {  ");
+        for (int i = 0; i < numeros.length; i++) {
+            cuadrados[i]= (int) Math.pow(numeros[i], 2);
+            System.out.print(cuadrados[i]+"  ");
+        }
+        System.out.print("}");
+    }
+    
+    static void ejercicioPropuesto5(){
+        Random aleatorio = new Random();
+        int [] numeros= new int[5];
+        int positivos,negativos, ceros, sumatoriaPositivos,sumatoriaNegativos;
+        
+        positivos = 0;
+        negativos = 0;
+        ceros = 0;
+        sumatoriaPositivos = 0;
+        sumatoriaNegativos = 0;
+        
+        System.out.println("NUMEROS GENERADOS:");
+        for (int i = 0; i < numeros.length; i++) {
+            
+            //genera números enteros aleatorios entre -5 y 5
+            numeros[i]= aleatorio.nextInt(5-(-5)+1)+(-5);
+            System.out.print(numeros[i]+"  ");
+            
+            if (numeros[i] > 0) {
+                positivos++;
+                sumatoriaPositivos+=numeros[i];
+            }
+            if (numeros[i] < 0) {
+                negativos++;
+                sumatoriaNegativos += numeros[i];
+            }
+            if (numeros[i]==0) {
+                ceros++;
+            }
+        }
+        
+        System.out.println("\n\nLa cantidad de ceros es "+ceros);
+        System.out.println("La cantidad de números negativos es "+negativos);
+        System.out.println("La cantidad de números positivos es "+positivos);
+        System.out.println("\nLa sumatoria de números positivos es "+sumatoriaPositivos);
+        System.out.println("La sumatoria de números negativos es "+sumatoriaNegativos);
     }
 }
