@@ -3,22 +3,26 @@ package arraysejercicios;
 
 import java.text.DecimalFormat;
 import java.util.Random;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class ArraysEJERCICIOS {
 
     public static void main(String[] args) {
-        ejercicioPropuesto5();
+        ejercicioPropuesto1();
     }
     
     
     static void ejercicioArreglos1(){
         int dimension;
+        Scanner teclado = new Scanner(System.in);
         
         dimension = Integer.parseInt(JOptionPane.showInputDialog("ingrese la cantidad de elementos:"));
         char [] letras = new char[dimension];
         
         for(int i=0; i<letras.length;i++){
+            /*System.out.print("ingrese la letra "+(i+1)+":");
+            letras[i]= teclado.next().charAt(0);*/
             letras[i]= JOptionPane.showInputDialog("ingrese la letra "+(i+1)+":").charAt(0);
         }
         
@@ -31,9 +35,12 @@ public class ArraysEJERCICIOS {
     static void ejercicioArreglos2(){
         
         String [] nombres = {"carlos","ana","jesus","ramon","pepe","simón"};
+        
+        System.out.print("Nombres[]{  ");
         for(String nombre:nombres){
-            System.out.println(nombre);
+            System.out.print(nombre+"  ");
         }
+        System.out.print("}\n");
     }
     
     static void ejercicioArreglos3(){
@@ -43,7 +50,7 @@ public class ArraysEJERCICIOS {
         double [] numeros = new double[dimension];
         
         for(int i=0;i<numeros.length;i++){
-            numeros[i]=Integer.parseInt(JOptionPane.showInputDialog("ingrese el numero "+(i+1)+":"));
+            numeros[i]=Double.parseDouble(JOptionPane.showInputDialog("ingrese el numero de la posición "+i+":"));
         }
         
         for(int i=0;i<numeros.length;i++){
@@ -80,6 +87,8 @@ public class ArraysEJERCICIOS {
     }
     
     static void ejercicioArreglos5(){
+        
+        int numeroElementos = Integer.parseInt(JOptionPane.showInputDialog("ingrese la cantidad de números a generar:"));
         int [] numeros = new int[10];
         
         System.out.println("LOS NUMEROS GENERADOS SON:");
@@ -96,8 +105,8 @@ public class ArraysEJERCICIOS {
     }
     
     static void ejercicioArreglos6(){
-        
-        double [] numeros = new double[8];
+        Random aleatorio = new Random();
+        int [] numeros = new int[25];
         
         //pos 0=positivos, pos 1= negativos
         double [] sumatorias = new double[2];
@@ -108,8 +117,10 @@ public class ArraysEJERCICIOS {
         //pos 0=numero de positivos , pos 1= numero negativos, pos 3= numero de ceros
         int [] cantidadNumeros = new int[3];
 
+        System.out.print("Numeros generados[] {  ");
         for(int i=0; i<numeros.length;i++){
-            numeros[i]= Double.parseDouble(JOptionPane.showInputDialog("ingrese el número "+(i+1)+":"));
+            numeros[i]= aleatorio.nextInt(5-(-5)+1)+(-5);
+            System.out.print(numeros[i]+"  ");
             
             if(numeros[i]>0){
                 sumatorias[0]+=numeros[i];
@@ -123,6 +134,7 @@ public class ArraysEJERCICIOS {
                 cantidadNumeros[2]++;
             }
         }
+        System.out.print("}\n");
         //promedio positivos
         medias[0] = sumatorias[0] / cantidadNumeros[0];
         
@@ -134,10 +146,9 @@ public class ArraysEJERCICIOS {
         System.out.println("\nEl número de ceros es "+cantidadNumeros[2]);
     }
     
-    
     static void ejercicioArreglos7(){
-        int [] A = new int[6];
-        int [] B = new int[6];
+        int [] A = new int[5];
+        int [] B = new int[A.length];
         int [] C = new int[A.length+B.length];
         
         System.out.print("A[]= ");
@@ -157,7 +168,8 @@ public class ArraysEJERCICIOS {
         for(int i=0;i < A.length;i++){
             C[ayuda]=A[i];
             C[ayuda+1]=B[i];
-            System.out.print(C[ayuda]+"  "+C[ayuda+1]+"  "); 
+            System.out.print(C[ayuda]+"  "+C[ayuda+1]+"  ");
+            ayuda+=2;
         }
         System.out.println();  
     }
@@ -182,12 +194,10 @@ public class ArraysEJERCICIOS {
             }
             else{
                 System.out.print(numeros[i]+" = ");
-            }
-            
+            }           
         } 
-        System.out.println(sumaTotal);
         
-        
+        System.out.println(sumaTotal);   
     }
     
     static void ejercicioArreglos9(){
@@ -204,6 +214,18 @@ public class ArraysEJERCICIOS {
             System.out.print(palabras[i]+" ");
         }
         System.out.println(" }");
+    }
+    
+    static void ejercicioArreglos10(){
+        String[] palabra = {"jefe","rendon"};
+        
+        for (int i = 0; i < palabra.length; i++) {
+            for (int j = 0; j < palabra[i].length(); j++) {
+                System.out.print(palabra[i].charAt(j)+" ");
+            }
+            System.out.println("\n");
+            
+        }
     }
     
     
