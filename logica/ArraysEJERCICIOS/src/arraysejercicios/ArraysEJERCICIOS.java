@@ -400,14 +400,14 @@ public class ArraysEJERCICIOS {
     
     static void ejercicioPropuesto10(){
        Random aleatorio = new Random();
-       int[] A = new int[20];
+       int[] A = new int[5];
        int[] B = new int[A.length];
        int[] C = new int[A.length];
        
         System.out.print("A[]{ ");
         for (int i = 0; i < A.length; i++) {
             //genera números aleatorios entre 0 y 50.
-            A[i]=aleatorio.nextInt(50-0+1)+0;
+            A[i]=aleatorio.nextInt(50-0+1)+(0);
             System.out.print(A[i]+" ");
         }
         System.out.print("}\n\n");
@@ -431,16 +431,15 @@ public class ArraysEJERCICIOS {
     
     static void ejercicioPropuesto11(){
         double []fibonacci = new double [100];
-        
-        fibonacci[0]=0;
-        fibonacci[1]=1;
-        for (int i = 2; i < fibonacci.length; i++) {
+  
+        for (int i = 0; i < fibonacci.length; i++) {
             if(i==0){
                 fibonacci[i]=0;
                 fibonacci[i+1]=1;
+                i++;
                 
             }else{
-                fibonacci[i]= fibonacci[i-2]+fibonacci[i-1];
+                fibonacci[i]= fibonacci[i-1]+fibonacci[i-2];
             }  
         }
         for (int i = 0; i < fibonacci.length; i++) {
