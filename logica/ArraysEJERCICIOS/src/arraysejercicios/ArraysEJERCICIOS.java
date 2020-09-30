@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class ArraysEJERCICIOS {
 
     public static void main(String[] args) {
-        ejercicioPropuesto1();
+        ejercicioPropuesto11();
     }
     
     
@@ -367,4 +367,85 @@ public class ArraysEJERCICIOS {
         System.out.println("\nLa sumatoria de números positivos es "+sumatoriaPositivos);
         System.out.println("La sumatoria de números negativos es "+sumatoriaNegativos);
     }
+    
+    
+    //ejercicios para exponer
+    static void ejercicioPropuesto9(){
+        Scanner sc = new Scanner(System.in);
+        boolean numeroEncontrado=false;
+        int n, num;
+        System.out.print("Cuántos números va a ingresar?: ");
+        n=sc.nextInt();
+        int vector[]=new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese un número para la posición "+i+": ");
+            vector[i]=sc.nextInt();
+        }
+        
+        System.out.print("\nIngrese número a buscar: ");
+        num=sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            if (vector[i]==num) {
+                System.out.println("\nEl número se encuentra en la posición: "+i);
+                numeroEncontrado=true;
+                break;
+            }
+        }
+        if (!numeroEncontrado) {
+            System.out.println("No,   número no encontrado.");
+        }
+    }
+    
+    static void ejercicioPropuesto10(){
+       Random aleatorio = new Random();
+       int[] A = new int[20];
+       int[] B = new int[A.length];
+       int[] C = new int[A.length];
+       
+        System.out.print("A[]{ ");
+        for (int i = 0; i < A.length; i++) {
+            //genera números aleatorios entre 0 y 50.
+            A[i]=aleatorio.nextInt(50-0+1)+0;
+            System.out.print(A[i]+" ");
+        }
+        System.out.print("}\n\n");
+        
+        System.out.print("B[]{ ");
+        for (int i = 0; i < B.length; i++) {
+            //genera números aleatorios entre 0 y 50.
+            B[i]=aleatorio.nextInt(50-0+1)+0;
+            System.out.print(B[i]+" ");
+        }
+        System.out.print("}\n\n");
+        
+        System.out.print("C[]{ ");
+        for (int i = 0; i < C.length; i++) {
+            //genera números aleatorios entre 0 y 50.
+            C[i] = A[i] * B[B.length-i-1];
+            System.out.print(C[i]+" ");
+        }
+        System.out.print("}\n");
+    }
+    
+    static void ejercicioPropuesto11(){
+        double []fibonacci = new double [100];
+        
+        fibonacci[0]=0;
+        fibonacci[1]=1;
+        for (int i = 2; i < fibonacci.length; i++) {
+            if(i==0){
+                fibonacci[i]=0;
+                fibonacci[i+1]=1;
+                
+            }else{
+                fibonacci[i]= fibonacci[i-2]+fibonacci[i-1];
+            }  
+        }
+        for (int i = 0; i < fibonacci.length; i++) {
+            System.out.println("posición "+i+": "+fibonacci[i]);
+        }
+    }
+    
 }
